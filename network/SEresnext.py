@@ -43,8 +43,6 @@ import  network.mynn as  mynn
 import torch.nn as nn
 from torch.utils import model_zoo
 
-__all__ = ['SENet', 'senet154', 'se_resnet50', 'se_resnet101', 'se_resnet152',
-           'se_resnext50_32x4d', 'se_resnext101_32x4d']
 
 pretrained_settings = {
     'se_resnext50_32x4d': {
@@ -389,3 +387,7 @@ def se_resnext101_32x4d(num_classes=1000):
     settings = pretrained_settings['se_resnext101_32x4d']['imagenet']
     initialize_pretrained_model(model, num_classes, settings)
     return model
+
+
+__all__ = ['SENet', 'senet154', 'se_resnet50', 'se_resnet101', 'se_resnet152',
+           'se_resnext50_32x4d', 'se_resnext101_32x4d']

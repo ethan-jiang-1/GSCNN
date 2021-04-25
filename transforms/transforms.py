@@ -160,6 +160,7 @@ class RandomBilateralBlur(object):
         blurred_img *= 255
         return Image.fromarray(blurred_img.astype(np.uint8))
 
+
 try:
     import accimage
 except ImportError:
@@ -257,7 +258,7 @@ def adjust_hue(img, hue_factor):
         PIL Image: Hue adjusted image.
     """
     if not(-0.5 <= hue_factor <= 0.5):
-        raise ValueError('hue_factor is not in [-0.5, 0.5].'.format(hue_factor))
+        raise ValueError('hue_factor is not in [-0.5, 0.5]. {}'.format(hue_factor))
 
     if not _is_pil_image(img):
         raise TypeError('img should be PIL Image. Got {}'.format(type(img)))
